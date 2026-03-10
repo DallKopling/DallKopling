@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMKN 1 JAWAI | Sweet Portal</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-soft: #fff9f9;
+            --primary-pink: #ffb7c5;
+            --secondary-peach: #ffe5d9;
+            --accent-sage: #d8e2dc;
+            --text-main: #5d576b;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            line-height: 1.6;
+            /* Latar belakang dengan pola bulat halus */
+            background-image: radial-gradient(#ffb7c5 0.6px, transparent 0.6px);
+            background-size: 30px 30px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background: var(--white);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-peach);
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-pink);
+            font-style: italic;
+        }
+
+        nav {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav span {
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav span.active {
+            background: var(--primary-pink);
+            color: white;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            padding: 30px 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        section { display: none; }
+        section.active { display: block; animation: fadeIn 0.8s ease; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* CARD STYLE */
+        .cute-card {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 30px rgba(255, 183, 197, 0.1);
+            border: 1px solid var(--secondary-peach);
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent-sage);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-pink);
+        }
+
+        /* GRID UNTUK JURUSAN */
+        .grid-jurusan {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .item {
+            background: var(--bg-soft);
+            padding: 20px;
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .item:hover {
+            border-color: var(--primary-pink);
+            transform: scale(1.03);
+            background: white;
+        }
+
+        .emoji { font-size: 2rem; display: block; margin-bottom: 10px; }
+
+        /* BUTTON */
+        .btn-more {
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(255, 183, 197, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">SMKN 1 Jawai</div>
+    <nav>
+        <span id="btn-home" class="active" onclick="buka('home')">Beranda</span>
+        <span id="btn-prog" onclick="buka('prog')">Program</span>
+        <span id="btn-info" onclick="buka('info')">Kontak</span>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="active">
+        <div class="cute-card">
+            <span class="tag">Halo, Selamat Datang!</span>
+            <h2>Rumah Belajar yang Nyaman</h2>
+            <p>Di SMKN 1 Jawai, kami percaya bahwa setiap siswi memiliki bakat unik. Kami menyediakan lingkungan belajar yang cerah, positif, dan kreatif untuk masa depanmu.</p>
+        </div>
+        <div class="cute-card" style="background: var(--secondary-peach); border: none;">
+            <h2>Misi Kami</h2>
+            <p>Menciptakan generasi yang cerdas, anggun dalam berperilaku, dan ahli di bidang teknologi maupun kreativitas.</p>
+        </div>
+    </section>
+
+    <section id="prog">
+        <div class="cute-card">
+            <h2>Pilih Passion-mu</h2>
+            <div class="grid-jurusan">
+                <div class="item">
+                    <span class="emoji">🌸</span>
+                    <b>DKV</b>
+                    <p style="font-size: 0.7rem;">Seni Visual</p>
+                </div>
+                <div class="item">
+                    <span class="emoji">✨</span>
+                    <b>TKJ</b>
+                    <p style="font-size: 0.7rem;">Dunia Digital</p>
+                </div>
+                <div class="item">
+                    <span class="emoji">🛵</span>
+                    <b>TBSM</b>
+                    <p style="font-size: 0.7rem;">Teknik Motor</p>
+                </div>
+                <div class="item">
+                    <span class="emoji">🍃</span>
+                    <b>ATPH</b>
+                    <p style="font-size: 0.7rem;">Agribisnis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="cute-card">
+            <h2>Hubungi Kami</h2>
+            <p>Punya pertanyaan tentang pendaftaran atau kegiatan sekolah? Jangan ragu untuk menyapa kami!</p>
+            <button class="btn-more">Kirim Pesan via WhatsApp</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Crafted with Love for SMKN 1 Jawai</p>
+</footer>
+
+<script>
+    function buka(id) {
+        // Sembunyikan semua section
+        document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+        // Nonaktifkan semua tombol nav
+        document.querySelectorAll('nav span').forEach(n => n.classList.remove('active'));
+        
+        // Tampilkan yang dipilih
+        document.getElementById(id).classList.add('active');
+        document.getElementById('btn-' + id).classList.add('active');
+        
+        // Scroll ke atas otomatis
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>
